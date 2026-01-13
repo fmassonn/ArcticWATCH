@@ -1,0 +1,98 @@
+netcdf siextentn_SImon_CNRM-CM6-1_ssp585_r2i1p1f2_gn_201501-210012 {
+dimensions:
+	time = UNLIMITED ; // (1032 currently)
+	y = 294 ;
+	x = 362 ;
+	nvertex = 4 ;
+	str_len = 255 ;
+	axis_nbounds = 2 ;
+	time_bnds = UNLIMITED ; // (1032 currently)
+variables:
+	double lat(y, x) ;
+		lat:_FillValue = NaN ;
+		lat:standard_name = "latitude" ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:bounds = "bounds_lat" ;
+	double lon(y, x) ;
+		lon:_FillValue = NaN ;
+		lon:standard_name = "longitude" ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:bounds = "bounds_lon" ;
+	double bounds_lon(y, x, nvertex) ;
+		bounds_lon:_FillValue = NaN ;
+	double bounds_lat(y, x, nvertex) ;
+		bounds_lat:_FillValue = NaN ;
+	char type(str_len) ;
+		type:name = "type" ;
+		type:standard_name = "area_type" ;
+		type:long_name = "Sea Ice area type" ;
+	double time(time) ;
+		time:_FillValue = NaN ;
+		time:axis = "T" ;
+		time:standard_name = "time" ;
+		time:long_name = "Time axis" ;
+		time:time_origin = "1850-01-01 00:00:00" ;
+		time:bounds = "time_bounds" ;
+		time:units = "days since 1850-01-01" ;
+		time:calendar = "gregorian" ;
+	double time_bounds(time, axis_nbounds) ;
+		time_bounds:_FillValue = NaN ;
+	double time_bnds(time_bnds) ;
+	double siextentn(time_bnds) ;
+
+// global attributes:
+		:Conventions = "CF-1.7 CMIP-6.2" ;
+		:creation_date = "2018-11-16T16:30:41Z" ;
+		:description = "Future scenario with high radiative forcing by the end of century. Following approximately RCP8.5 global forcing pathway but with new forcing based on SSP5. Concentration-driven. As a tier 2 option, this simulation should be extended to year 2300" ;
+		:title = "CNRM-CM6-1 model output prepared for CMIP6 / ScenarioMIP ssp585" ;
+		:activity_id = "ScenarioMIP" ;
+		:contact = "contact.cmip@meteo.fr" ;
+		:data_specs_version = "01.00.21" ;
+		:dr2xml_version = "1.16" ;
+		:experiment_id = "ssp585" ;
+		:experiment = "update of RCP8.5 based on SSP5" ;
+		:external_variables = "areacello" ;
+		:forcing_index = 2 ;
+		:frequency = "mon" ;
+		:further_info_url = "https://furtherinfo.es-doc.org/CMIP6.CNRM-CERFACS.CNRM-CM6-1.ssp585.none.r2i1p1f2" ;
+		:grid = "native ocean tri-polar grid with 105 k ocean cells" ;
+		:grid_label = "gn" ;
+		:nominal_resolution = "100 km" ;
+		:initialization_index = 1 ;
+		:institution_id = "CNRM-CERFACS" ;
+		:institution = "CNRM (Centre National de Recherches Meteorologiques, Toulouse 31057, France), CERFACS (Centre Europeen de Recherche et de Formation Avancee en Calcul Scientifique, Toulouse 31057, France)" ;
+		:license = "CMIP6 model data produced by CNRM-CERFACS is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at http://www.umr-cnrm.fr/cmip6/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
+		:mip_era = "CMIP6" ;
+		:parent_experiment_id = "historical" ;
+		:parent_mip_era = "CMIP6" ;
+		:parent_activity_id = "CMIP" ;
+		:parent_source_id = "CNRM-CM6-1" ;
+		:parent_time_units = "days since 1850-01-01 00:00:00" ;
+		:parent_variant_label = "r2i1p1f2" ;
+		:branch_method = "standard" ;
+		:branch_time_in_parent = 60265. ;
+		:branch_time_in_child = 60265. ;
+		:physics_index = 1 ;
+		:product = "model-output" ;
+		:realization_index = 2 ;
+		:realm = "seaIce" ;
+		:references = "http://www.umr-cnrm.fr/cmip6/references" ;
+		:source = "CNRM-CM6-1 (2017):  aerosol: prescribed monthly fields computed by TACTIC_v2 scheme atmos: Arpege 6.3 (T127; Gaussian Reduced with 24572 grid points in total distributed over 128 latitude circles (with 256 grid points per latitude circle between 30degN and 30degS reducing to 20 grid points per latitude circle at 88.9degN and 88.9degS); 91 levels; top level 78.4 km) atmosChem: OZL_v2 land: Surfex 8.0c ocean: Nemo 3.6 (eORCA1, tripolar primarily 1deg; 362 x 294 longitude/latitude; 75 levels; top grid cell 0-1 m) seaIce: Gelato 6.1" ;
+		:source_id = "CNRM-CM6-1" ;
+		:source_type = "AOGCM" ;
+		:sub_experiment_id = "none" ;
+		:sub_experiment = "none" ;
+		:table_id = "SImon" ;
+		:variable_id = "siconc" ;
+		:variant_label = "r2i1p1f2" ;
+		:EXPID = "CNRM-CM6-1_ssp585_r2i1p1f2" ;
+		:CMIP6_CV_version = "cv=6.2.3.0-7-g2019642" ;
+		:dr2xml_md5sum = "c2dce418e78ca835be1e2ff817c2c403" ;
+		:xios_commit = "1442-shuffle" ;
+		:nemo_gelato_commit = "49095b3accd5d4c_6524fe19b00467a" ;
+		:arpege_minor_version = "6.3.2" ;
+		:history = "none" ;
+		:tracking_id = "hdl:21.14100/e48d1b6d-f161-4a32-b497-cde0b17074c5" ;
+}
